@@ -1,0 +1,69 @@
+<%- include("header.ejs")%>
+<style>
+    body{
+        background-image: url("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=800");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav{
+        width: 100%;
+        height: 10%;
+        padding: 20px;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+gap: 20px;
+    }
+    .form{
+        width: 400px;
+        height: 500px;
+        background-color: lightcoral;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 80px;
+        border-radius: 10px;
+        margin-right: 1050px;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    form input{
+        padding: 10px 50px;
+        border-radius: 20px;
+        border: none;
+    }
+    form button{
+        padding: 10px 30px;
+        border-radius: 20px;
+        border: none;
+background-color: rgb(73, 73, 145);
+color: wheat;
+
+    }
+</style>
+<!--  -->
+<%- include("nav.ejs")%>
+<!--  -->
+<div class="form">
+    <h1>Signup</h1>
+    <form action="/signup" method="POST">
+        <input type="text" name="username" placeholder="username" />
+        <input type="password" name="password" placeholder="password" />
+        <input type="email" name="email" placeholder="email" />
+        <button>Signup</button>
+        <a href="/signin">Sign in</a>
+    </form>
+</div>
+<!--  -->
+<%- include("footer.ejs")%>

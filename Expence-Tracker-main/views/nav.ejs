@@ -1,0 +1,30 @@
+<style>
+    a{
+        padding: 10px 20px;
+        background-color: seagreen;
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+</style>
+
+<nav>
+    <% if(!admin){ %>
+    <!--  -->
+    <a href="/">Home</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="/signup">SignUp</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="/signin">Sign in</a>
+
+    <!--  -->
+    <% } else { %>
+    <!--  -->
+    <a href="/profile">Home</a>
+    &nbsp;&nbsp;&nbsp
+    <a href="/reset">Reset Password</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="/signout">Signout</a>
+    <!--  -->
+    <% } %>
+</nav>

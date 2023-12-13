@@ -1,0 +1,91 @@
+<%- include("header.ejs")%>
+
+<style>
+    body{
+        background-image: url("https://images.pexels.com/photos/4386339/pexels-photo-4386339.jpeg?auto=compress&cs=tinysrgb&w=600");
+        background-size: cover;
+        
+
+    }
+    nav{
+        padding: 20px;
+    }
+        form select{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+        }
+        form input{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+
+        }
+        form button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: brown;
+
+        }
+    
+    
+    .dash{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        color: rgb(17, 16, 16);
+    }
+    .head{
+        color: darkred;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+</style>
+<!--  -->
+<%- include("nav.ejs")%>
+<!--  -->
+<h1>👋 <%= admin.username %></h1>
+
+<a href="/createexpense">Add New Expense</a>
+<hr />
+<form action="/filter">
+    <select name="key" id="">
+        <option value="amount">Amount</option>
+        <option value="remark">Remark</option>
+        <option value="category">Category</option>
+        <option value="paymentmode">Payment Mode</option>
+        <option value="Date">Date</option>
+    </select>
+    <input type="text" name="value" placeholder="enter search term" />
+    <button>Filter</button>
+</form>
+<h1> Sum: <%= expenses.reduce((ac,cv) => ac+cv.amount, 0)%></h1>
+<!-- <%= JSON.stringify(expenses)%> -->
+<hr>
+<div class="head">
+    <h1>Amount</h1>
+        <h1>Remark</h1>
+        <h1>Category</h1>
+        <h1>Payment Mode</h1>
+</div>
+<% expenses.forEach((e)=>{ %>
+    <div class="dash">
+        <h2><%= e.amount %></h2>
+        <h2><%= e.remark %></h2>
+        <h2><%= e.category %></h2>
+        <h2><%= e.paymentmode %></h2>
+        </div>
+        
+   <%})%>
+   
+</div>
+
+
+<!--  -->
+<%- include("footer.ejs")%>
